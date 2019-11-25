@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     devtool: "source-map",
     resolve: {
-        extensions: ['.ts', '.tsx', '.js']
+        extensions: ['.ts', '.tsx', '.js', '.scss']
     },
     entry: {
         main: './src/index.tsx'
@@ -27,6 +27,10 @@ module.exports = {
                 enforce: "pre",
                 test: /\.js$/,
                 loader: 'source-map-loader'
+            },
+            {
+                test: /\.scss/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
     },
