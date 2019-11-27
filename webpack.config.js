@@ -42,9 +42,14 @@ module.exports = (env, argv)=>{
                         'sass-loader']
                 },
                 {
-                    test: /\.(png|svg|jpg|gif)$/,
+                    test: /\.(png|svg|jpe?g|gif)$/,
                     use: [
-                        'file-loader',
+                        {
+                            loader: "url-loader",
+                            options: {
+                                limit: false
+                            }
+                        }
                     ],
                 },
             ]
