@@ -4,5 +4,6 @@ export interface todoItemInterface {
     completed: boolean
 }
 export interface todoListInterface {
-    todoList: todoItemInterface[]
+    todoList: todoItemInterface[],
+    toggleTodo: (id: number)=> void
 }
