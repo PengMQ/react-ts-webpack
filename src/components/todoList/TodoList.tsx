@@ -1,19 +1,25 @@
 import * as React from "react";
 import {todoListInterface} from '../../types/types'
 import {TodoItem} from '../todoItem/TodoItem'
+import {observer} from 'mobx-react-lite'
 
-const TodoList: React.FC<todoListInterface> = ({todoList, toggleTodo}) => (
-    <ul>
-        {todoList.map((todoItem) => (
-            <li key={todoItem.id}
-                onClick={() => {toggleTodo(todoItem.id)}}
-            >
-                <TodoItem id={todoItem.id} text={todoItem.text} completed={todoItem.completed}/>
-            </li>
+const TodoList: React.FC<todoListInterface> = observer(function ({todoList, toggleTodo}) {
+    console.log('in TodoList.tsx');
+    return (
+        <ul>
+            {todoList.map((todoItem) => (
+                <li key={todoItem.id}
+                    onClick={() => {
+                        toggleTodo(todoItem.id)
+                    }}
+                >
+                    <TodoItem id={todoItem.id} text={todoItem.text} completed={todoItem.completed}/>
+                </li>
 
-        ))}
-    </ul>
-);
+            ))}
+        </ul>
+    )
+});
 
 export default TodoList;
 

@@ -6,6 +6,6 @@
     "module": "commonjs",
     "target": "es6",
     "jsx": "react",
-    "experimentalDecorators": false
+    "experimentalDecorators": true,
   }
 }
