@@ -6,7 +6,7 @@ export const TodoItem: React.FC<todoItemInterface> = ({id, text, completed}) => 
     return (
         <div
             style={{textDecoration: completed ? 'line-through' : 'none'}}
-        >{text}: {completed.toString()}</div>
+        >{text}</div>
     )
 };
 

@@ -24,18 +24,6 @@ function App() {
         // not render again.
         setTodos(newTodos);
     };
-
-    // This will not work, because the todos did change, it is the same array reference, and react hooks will see
-    // this as no changes even the object in the array changes.
-    // let toggleTodo = (id: number): void => {
-    //     let index = todos.findIndex((item)=>{
-    //         return item.id === id;
-    //     });
-    //     todos[index].completed = !todos[index].completed;
-    //     console.dir(todos);
-    //     setTodos(todos);
-    // };
-
     return (
         <div>
             <h6>React hooks example</h6>
