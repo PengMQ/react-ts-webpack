@@ -1,8 +1,9 @@
 import {createContext} from 'react'
 import {decorate, observable, computed, action} from 'mobx'
+import {todoItemInterface} from '../../types/types'
 
 export class Todos {
-    todos = [
+    todos: Array<todoItemInterface> = [
         {id: 0, text: 'clean house', completed: false},
         {id: 1, text: 'cook dinner', completed: false}
     ];

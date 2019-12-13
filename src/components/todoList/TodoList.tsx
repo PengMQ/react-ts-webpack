@@ -4,7 +4,6 @@ import {TodoItem} from '../todoItem/TodoItem'
 import {observer} from 'mobx-react-lite'
 
 const TodoList: React.FC<todoListInterface> = observer(function ({todoList, toggleTodo}) {
-    console.log('in TodoList.tsx');
     return (
         <ul>
             {todoList.map((todoItem) => (
