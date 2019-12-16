@@ -6,8 +6,8 @@ function UserObserverPerson() {
     const person = useLocalStore(() => ({name: 'John'}))
     return useObserver(() => (
         <div>
-            {person.name}
-            <button onClick={() => (person.name = 'Mike')}>No! I am Mike</button>
+            <div>The name is: {person.name}</div>
+            <button onClick={() => (person.name = 'Mike')}>Change name</button>
         </div>
     ))
 }

@@ -8,9 +8,9 @@ export default function ObservePerson() {
         <div>
             The old name is: {person.name}
             <div>
-                <Observer>{() => <div>{person.name}</div>}</Observer>
+                <Observer>{() => <div>The name is: {person.name}</div>}</Observer>
                 <button onClick={() => (person.name = 'Mike')}>
-                    I want to be Mike
+                    Change name
                 </button>
             </div>
         </div>
