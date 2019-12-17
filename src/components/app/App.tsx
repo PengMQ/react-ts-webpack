@@ -5,6 +5,7 @@ import todosContext from '../../stores/todoListStore/TodoListStore';
 import UserObserverPerson from '../mobxFeature/useObserverPerson/UseObserverPerson'
 import ObservePerson from '../mobxFeature/observerPerson/ObserverPerson'
 import ObserverLowercasePerson from "../mobxFeature/observerLowercasePerson/ObserverLowercasePerson";
+import ContextButton from '../button/ContextButton'
 import './App.scss'
 
 
@@ -13,15 +14,21 @@ const App = () => {
     return (
         <div>
             <h6>React hooks && Mobx example</h6>
+
             <div className={'block'}>
-                todoList example:
+                <div>todoList example:</div>
                 <TodoList todoList={todosStore.todos} toggleTodo={todosStore.toggleTodo}/>
+            </div>
+
+            <div className={'block'}>
+                <div>UseContext example:</div>
+                <ContextButton></ContextButton>
             </div>
 
             <div className='block'>
                 <div>useObserver vs &lt;Observer&gt;&lt;/Observer&gt; vs observer </div>
                 <div className='block'>
-                    observer example:
+                    <div>observer example:</div>
                     <div>
                         <ObserverLowercasePerson></ObserverLowercasePerson>
                     </div>
