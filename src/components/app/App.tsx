@@ -2,6 +2,7 @@ import * as React from 'react';
 import {useState} from "react";
 import TodoList from '../todoList/TodoList';
 import './App.scss'
+import {computed} from "mobx";
 
 
 const App = () => {
@@ -11,9 +12,14 @@ const App = () => {
         {id: 1, text: 'cook dinner', completed: false}
     ]);
     const toggleTodo = (index: number) => {
-
-        todos[index].completed = !todos[index].completed;
-        setTodos(todos);
+        let newTodos = todos.map((todo, currentIndex) => {
+            if (index === currentIndex) {
+                return {...todo, completed: !todo.completed};
+            } else {
+                return todo;
+            }
+        });
+        setTodos(newTodos);
     };
     return (
         <div>
