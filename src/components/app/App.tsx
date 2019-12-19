@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useContext, useState} from "react";
+import {useState} from "react";
 import TodoList from '../todoList/TodoList';
 import './App.scss'
 
@@ -10,10 +10,8 @@ const App = () => {
         {id: 0, text: 'clean house', completed: false},
         {id: 1, text: 'cook dinner', completed: false}
     ]);
-    const toggleTodo = (id: number) => {
-        let index = todos.findIndex((item) => {
-            return item.id === id;
-        });
+    const toggleTodo = (index: number) => {
+
         todos[index].completed = !todos[index].completed;
         setTodos(todos);
     };
