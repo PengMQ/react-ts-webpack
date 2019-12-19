@@ -14,10 +14,7 @@ export class Todos {
         }).length;
     }
 
-    toggleTodo = (id: number): void => {
-        let index = this.todos.findIndex((item) => {
-            return item.id === id;
-        });
+    toggleTodo = (index: number): void => {
         this.todos[index].completed = !this.todos[index].completed;
     };
 }
