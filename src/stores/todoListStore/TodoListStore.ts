@@ -1,5 +1,5 @@
-import {createContext, useMemo} from 'react'
-import {decorate, observable, computed, action} from 'mobx'
+import {createContext} from 'react'
+import {decorate, observable, computed} from 'mobx'
 import {todoItemInterface} from '../../types/types'
 
 export class Todos {
@@ -8,11 +8,12 @@ export class Todos {
         {id: 1, text: 'cook dinner', completed: false}
     ];
 
-    get uncompletedNumber(){
-       return  this.todos.filter((todo, index)=>{
+    get uncompletedNumber() {
+        return this.todos.filter((todo, index) => {
             return !todo.completed;
         }).length;
     }
+
     toggleTodo = (id: number): void => {
         let index = this.todos.findIndex((item) => {
             return item.id === id;
