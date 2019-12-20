@@ -1,9 +1,7 @@
 import * as React from 'react';
 import {useState} from "react";
 import TodoList from '../todoList/TodoList';
-import './App.scss'
-import {computed} from "mobx";
-
+import './App.scss';
 
 const App = () => {
     console.log('<App>');
@@ -11,15 +9,10 @@ const App = () => {
         {id: 0, text: 'clean house', completed: false},
         {id: 1, text: 'cook dinner', completed: false}
     ]);
+    //todo: fix the bug for toggleTodo()
     const toggleTodo = (index: number) => {
-        let newTodos = todos.map((todo, currentIndex) => {
-            if (index === currentIndex) {
-                return {...todo, completed: !todo.completed};
-            } else {
-                return todo;
-            }
-        });
-        setTodos(newTodos);
+        todos[index].completed = !todos[index].completed;
+        setTodos(todos);
     };
     return (
         <div>

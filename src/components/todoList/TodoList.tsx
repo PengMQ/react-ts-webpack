@@ -3,7 +3,8 @@ import {todoListInterface} from '../../types/types'
 import {TodoItem} from '../todoItem/TodoItem'
 import {observer} from 'mobx-react-lite'
 
-const TodoList: React.FC<todoListInterface> = observer(function ({todoList, toggleTodo}) {
+//todo: make TodoList as an observer
+const TodoList: React.FC<todoListInterface> = function ({todoList, toggleTodo}) {
     return (
         <ul>
             {todoList.map((todoItem, index) => (
@@ -18,7 +19,7 @@ const TodoList: React.FC<todoListInterface> = observer(function ({todoList, togg
             ))}
         </ul>
     )
-});
+};
 
 export default TodoList;
 

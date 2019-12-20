@@ -14,14 +14,15 @@ export class Todos {
         }).length;
     }
 
+    //todo: Finish the logic for toggle
     toggleTodo = (index: number): void => {
-        this.todos[index].completed = !this.todos[index].completed;
+
+
     };
 }
 
-decorate(Todos, {
-    todos: observable,
-    uncompletedNumber: computed
-});
+//todo: use decorate to declare todos as observable
+
+
 
 export default createContext(new Todos());
