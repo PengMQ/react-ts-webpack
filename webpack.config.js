@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = (env, argv) => {
     const isDevMode = argv.mode === 'development';
     return {
-        devtool: "source-map",
+        devtool:  isDevMode ? 'eval-cheap-module-source-map' : 'source-map',
         resolve: {
             extensions: ['.ts', '.tsx', '.js', '.scss']
         },

@@ -9,12 +9,12 @@ import ObserverLowercasePerson from "../mobxFeature/observerLowercasePerson/Obse
 import ContextButton from '../button/ContextButton'
 import './App.scss'
 
-
 const App = () => {
     const todosStore = useContext(todosContext);
     console.log('<App>');
     return (
         <div>
+            <img src={require('./images/moon.jpg')} alt=""/>
             <h6>React hooks && Mobx example</h6>
 
             <div className={'block'}>
