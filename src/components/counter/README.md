@@ -1,0 +1,1 @@
+最简单的一个react component测试
