@@ -1,0 +1,1 @@
+测试带有ajax请求的component
