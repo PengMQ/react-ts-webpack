@@ -1,7 +1,9 @@
 import * as React from "react";
-import {render, waitForElement, wait} from '@testing-library/react';
+import {render, waitForElement} from '@testing-library/react';
+import "@testing-library/jest-dom/extend-expect";
 import Profile from "./profle";
 import axios from 'axios';
+
 //jest.mock(...) function to automatically mock the axios API fire, and it must put in the level with import
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
@@ -19,8 +21,8 @@ test('loading text should hide and user name should show after get profile data 
         { container }
     );
     //assert dom changes
-    expect(loadingText.textContent.includes('')).toBeTruthy();
-    expect(username.textContent.includes('nana')).toBeTruthy();
+    expect(loadingText).toHaveTextContent('');
+    expect(username).toHaveTextContent('nana');
 
 });
 test('loading text should hide and error message should show after get profile data failed', () => {

@@ -1,6 +1,7 @@
 import * as React from "react";
 import Counter from './counter'
 import {render, fireEvent} from '@testing-library/react';
+import "@testing-library/jest-dom/extend-expect";
 
 // fireEvent doc: https://testing-library.com/docs/dom-testing-library/api-events
 
@@ -15,5 +16,6 @@ test('the count should be 1 when you click the increase button once', () => {
     // act
     fireEvent.click(increaseButton);
     // assert
-    expect(getByTestId('count-announcement').innerHTML.includes('1')).toBeTruthy();
+    expect(getByTestId('count-announcement')).toHaveTextContent('1');
+
 });
